@@ -10,7 +10,17 @@ public class ATM {
         System.out.println("Current Balance: " + balance);
     }
 
-    public void withdraw(double amount) throws ATMException {
-        throw new ATMException("Method has not been implemented");
+//     public void withdraw(double amount) throws ATMException {
+//         throw new ATMException("Method has not been implemented");
+//     }
+     public void withdraw(double amount) throws ATMException {
+        if (amount <= 0) {
+            throw new ATMException("Invalid withdrawal amount");
+        }
+        if (amount > balance) {
+            throw new ATMException("Insufficient funds");
+        }
+        balance -= amount;
+        System.out.println("Withdrawal successful. Current balance: " + balance);
     }
 }
