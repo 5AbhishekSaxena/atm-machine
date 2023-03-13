@@ -9,6 +9,15 @@ public class ATM {
     public void printBalance() {
         System.out.println("Current Balance: " + balance);
     }
+    
+    public void deposit(double amount) throws ATMException {
+    if (amount <= 0) {
+        throw new ATMException("Invalid deposit amount");
+    }
+    balance += amount;
+    System.out.println("Deposit successful. Current balance: " + balance);
+}
+
 
 //     public void withdraw(double amount) throws ATMException {
 //         throw new ATMException("Method has not been implemented");
@@ -23,4 +32,5 @@ public class ATM {
         balance -= amount;
         System.out.println("Withdrawal successful. Current balance: " + balance);
     }
+    
 }
