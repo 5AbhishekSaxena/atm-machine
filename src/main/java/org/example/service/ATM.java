@@ -9,11 +9,21 @@ public class ATM {
     public void printBalance() {
         System.out.println("Current Balance: " + balance);
     }
-
+  public void deposit(double amount) throws ATMException {
+        //throw new ATMException("Method has not been implemented");
+        if(amount <= 0){
+        System.out.println("Invalid amount, Please check again");
+        }
+        else{    
+            balance+=amount;
+            System.out.println("Deposit Successful , Current Balance:"+balance);
+        }
+            
+    }
     public void withdraw(double amount) throws ATMException {
         //throw new ATMException("Method has not been implemented");
-        if(amount < 0){
-        System.out.println("Invalid , Please check again");
+        if(amount <= 0){
+        System.out.println("Invalid amount, Please check again");
         }
         else if(amount > balance){
             System.out.println("Withdraw amount is higher than the balance in the account");
