@@ -10,9 +10,9 @@ public class Main {
         try {
             atmMachineDriver.run();
         } catch (ATMException exception) {
-            String message =
-                    exception.getMessage() == null || exception.getMessage().isEmpty()
-                            ? "Something went wrong. Please try again!" : exception.getMessage();
+            String message = exception.getMessage() == null || exception.getMessage().isEmpty()
+                    ? "Something went wrong. Please try again!"
+                    : exception.getMessage();
             System.out.println(message);
         }
     }

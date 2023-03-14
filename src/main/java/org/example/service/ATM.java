@@ -11,6 +11,14 @@ public class ATM {
     }
 
     public void withdraw(double amount) throws ATMException {
-        throw new ATMException("Method has not been implemented");
+        if (balance >= amount) {
+            balance -= amount;
+        } else {
+            throw new ATMException("Insufficient amount!! As the amount in your account is:" + balance);
+        }
+    }
+
+    public void deposit(double amount) {
+        balance += amount;
     }
 }
