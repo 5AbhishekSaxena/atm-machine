@@ -14,6 +14,7 @@ public class ATMMachineDriver {
         System.out.println("ATM Machine");
         atm.printBalance();
         withdrawMoney();
+        depositMoney();
     }
 
     private void withdrawMoney() throws ATMException {
@@ -21,6 +22,14 @@ public class ATMMachineDriver {
         double amount = Double.parseDouble(scanner.next());
         atm.withdraw(amount);
         System.out.println("Amount withdrawn successfully!");
+        atm.printBalance();
+    }
+
+    private void depositMoney() throws ATMException {
+        System.out.print("Enter deposit amount(₹): ");
+        double amount = Double.parseDouble(scanner.next());
+        atm.deposit(amount);
+        System.out.println("Amount deposited successfully!");
         atm.printBalance();
     }
 }
